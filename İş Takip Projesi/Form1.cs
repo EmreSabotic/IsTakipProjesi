@@ -16,5 +16,19 @@ namespace İş_Takip_Projesi
         {
             InitializeComponent();
         }
+
+        private void btnDepartmanListesi_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            Formlar.frmDepartmanlar frm = new Formlar.frmDepartmanlar();
+            frm.MdiParent = this;
+            frm.Show();
+        }
+
+        private void btnPersonelListesi_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            Formlar.FrmPersoneller frm2 = new Formlar.FrmPersoneller();
+            frm2.MdiParent = this;
+            frm2.Show();
+        }
     }
 }
