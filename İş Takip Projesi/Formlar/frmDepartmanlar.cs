@@ -79,5 +79,10 @@ namespace İş_Takip_Projesi.Formlar
             XtraMessageBox.Show("Güncelleme işlemi başarılı bir şekilde gerçekleştirildi!", "Bilgi", MessageBoxButtons.OK, MessageBoxIcon.Information);
             Listele();
         }
+
+        private void frmDepartmanlar_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

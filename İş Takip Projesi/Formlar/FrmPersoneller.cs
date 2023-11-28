@@ -54,7 +54,7 @@ namespace İş_Takip_Projesi.Formlar
         {
             personeller();
         }
-
+       
         private void labelControl2_Click(object sender, EventArgs e)
         {
 
@@ -62,27 +62,75 @@ namespace İş_Takip_Projesi.Formlar
 
         private void btnEkle_Click(object sender, EventArgs e)
         {
-            TblPersonel t = new TblPersonel();
-            t.Ad = txtAd.Text;
-            t.Soyad= txtSoyad.Text;
-            t.Mail = txtMail.Text;
-            t.Gorsel =txtGörsel.Text;
-            t.Departman=int.Parse (lookUpEdit1.EditValue.ToString());
-            db.TblPersonel.Add(t);
-            db.SaveChanges();
-            XtraMessageBox.Show("Personel başarı ile eklendi!","Bilgi",MessageBoxButtons.OK, MessageBoxIcon.Information);
-            personeller();
+            try
+            {
+
+
+
+                TblPersonel t = new TblPersonel();
+                t.Ad = txtAd.Text;
+                t.Soyad = txtSoyad.Text;
+                t.Mail = txtMail.Text;
+                t.Gorsel = txtGörsel.Text;
+                t.Durum = true;
+                t.Departman = int.Parse(lookUpEdit1.EditValue.ToString());
+                db.TblPersonel.Add(t);
+                
+                
+                db.SaveChanges();
+                XtraMessageBox.Show("Personel başarı ile eklendi!", "Bilgi", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                personeller();
+             
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show("hata"+ex);
+            }
         }
 
         private void btnSil_Click(object sender, EventArgs e)
         {
-            var x = int.Parse(txtID.Text);
-            var deger = db.TblPersonel.Find(x);
-            deger.Durum = false;
-            db.SaveChanges();
-            XtraMessageBox.Show("Personel başarı ile silindi!", "Bilgi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            personeller() ;
+            try
+            {
 
+
+
+                var x = int.Parse(txtID.Text);
+                var deger = db.TblPersonel.Find(x);
+                deger.Durum = false;
+                db.SaveChanges();
+                XtraMessageBox.Show("Personel başarı ile silindi!", "Bilgi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                personeller();
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show("Hata Oluştu\n"+ex,"Hata",MessageBoxButtons.OK,MessageBoxIcon.Error);
+            }
+        }
+
+        private void gridView1_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
+        {
+            txtID.Text = gridView1.GetFocusedRowCellValue("ID").ToString();
+            txtAd.Text = gridView1.GetFocusedRowCellValue("Ad").ToString();
+            txtSoyad.Text = gridView1.GetFocusedRowCellValue("Soyad").ToString();
+            txtMail.Text = gridView1.GetFocusedRowCellValue("Mail").ToString();
+            lookUpEdit1.Text = gridView1.GetFocusedRowCellValue("Departman").ToString();
+        }
+
+        private void btnGüncelle_Click(object sender, EventArgs e)
+        {
+            int x = int.Parse(txtID.Text);
+            var deger =  db.TblPersonel.Find(x);
+            deger.Ad=txtAd.Text;
+            deger.Soyad=txtSoyad.Text;
+            deger.Mail=txtMail.Text;
+            deger.Gorsel=txtGörsel.Text;
+            deger.Departman=int.Parse(lookUpEdit1.EditValue.ToString());
+            db.SaveChanges();
+            XtraMessageBox.Show("Personel başarı ile güncellendi!", "Bilgi", MessageBoxButtons.OK, MessageBoxIcon.Question);
+            personeller();
         }
     }
 }

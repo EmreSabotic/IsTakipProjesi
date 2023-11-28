@@ -74,6 +74,7 @@
             // 
             this.gridView1.GridControl = this.gridControl1;
             this.gridView1.Name = "gridView1";
+            this.gridView1.FocusedRowChanged += new DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventHandler(this.gridView1_FocusedRowChanged);
             // 
             // groupControl1
             // 
@@ -185,6 +186,7 @@
             this.btnGüncelle.Size = new System.Drawing.Size(137, 34);
             this.btnGüncelle.TabIndex = 7;
             this.btnGüncelle.Text = "Güncelle";
+            this.btnGüncelle.Click += new System.EventHandler(this.btnGüncelle_Click);
             // 
             // btnSil
             // 
