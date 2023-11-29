@@ -26,12 +26,14 @@ namespace İş_Takip_Projesi.Formlar
             lblAktifİş.Text = db.TblGorevler.Count(x=>x.Durum=="1").ToString();
             lblPasifiş.Text = db.TblGorevler.Count(x=>x.Durum=="0").ToString();
             lblSonGörev.Text=db.TblGorevler.OrderByDescending(x=>x.ID).Select(x=>x.Aciklama).FirstOrDefault();
+            lblSonGörevTarihi.Text=db.TblGorevDetaylar.OrderByDescending(x=>x.ID).Select(x=>x.Saat).FirstOrDefault().ToString();
             lblŞehir.Text=db.TblFirmalar.Select(x=>x.il).Distinct().Count().ToString();
             lblSektör.Text=db.TblFirmalar.Select(x=>x.Sektor).Distinct().Count().ToString();
             DateTime bugün = DateTime.Today;
             lblBugünkiGörevler.Text=db.TblGorevler.Count(x=>x.Tarih==bugün).ToString();
             var d1=db.TblGorevler.GroupBy(x=>x.GorevAlan).OrderByDescending(z=>z.Count()).Select(y=>y.Key).FirstOrDefault();
             lblAyınPersoneli.Text=db.TblPersonel.Where(x=>x.ID==d1).Select(y=>y.Ad +" "+ y.Soyad).FirstOrDefault().ToString();
+            lblAyınDepartmanı.Text=db.TblDepartmanlar.Where(x=>x.ID==db.TblPersonel.Where(t=>t.ID==d1).Select(z=>z.Departman).FirstOrDefault()).Select(y=>y.Ad).FirstOrDefault().ToString();
         }
 
        
