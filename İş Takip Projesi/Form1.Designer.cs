@@ -31,7 +31,7 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.ribbonControl1 = new DevExpress.XtraBars.Ribbon.RibbonControl();
-            this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
+            this.btnAnaSayfa = new DevExpress.XtraBars.BarButtonItem();
             this.btnDepartmanListesi = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem3 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem4 = new DevExpress.XtraBars.BarButtonItem();
@@ -44,11 +44,11 @@
             this.barCheckItem1 = new DevExpress.XtraBars.BarCheckItem();
             this.F = new DevExpress.XtraBars.BarButtonItem();
             this.btnGorevListesi = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem12 = new DevExpress.XtraBars.BarButtonItem();
+            this.btnGorevTanimla = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem13 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem14 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem15 = new DevExpress.XtraBars.BarButtonItem();
-            this.barButtonItem16 = new DevExpress.XtraBars.BarButtonItem();
+            this.btnGorevDetay = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem17 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem18 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem19 = new DevExpress.XtraBars.BarButtonItem();
@@ -88,7 +88,7 @@
             this.ribbonControl1.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
             this.ribbonControl1.ExpandCollapseItem,
             this.ribbonControl1.SearchEditItem,
-            this.barButtonItem1,
+            this.btnAnaSayfa,
             this.btnDepartmanListesi,
             this.barButtonItem3,
             this.barButtonItem4,
@@ -101,11 +101,11 @@
             this.barCheckItem1,
             this.F,
             this.btnGorevListesi,
-            this.barButtonItem12,
+            this.btnGorevTanimla,
             this.barButtonItem13,
             this.barButtonItem14,
             this.barButtonItem15,
-            this.barButtonItem16,
+            this.btnGorevDetay,
             this.barButtonItem17,
             this.barButtonItem18,
             this.barButtonItem19,
@@ -127,13 +127,14 @@
             this.ribbonPage7});
             this.ribbonControl1.Size = new System.Drawing.Size(1394, 183);
             // 
-            // barButtonItem1
+            // btnAnaSayfa
             // 
-            this.barButtonItem1.Caption = "Ana Sayfa";
-            this.barButtonItem1.Id = 1;
-            this.barButtonItem1.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.Image")));
-            this.barButtonItem1.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.LargeImage")));
-            this.barButtonItem1.Name = "barButtonItem1";
+            this.btnAnaSayfa.Caption = "Ana Sayfa";
+            this.btnAnaSayfa.Id = 1;
+            this.btnAnaSayfa.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.Image")));
+            this.btnAnaSayfa.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.LargeImage")));
+            this.btnAnaSayfa.Name = "btnAnaSayfa";
+            this.btnAnaSayfa.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnAnaSayfa_ItemClick);
             // 
             // btnDepartmanListesi
             // 
@@ -228,18 +229,19 @@
             // 
             this.btnGorevListesi.Caption = "Görev Listesi";
             this.btnGorevListesi.Id = 13;
-            this.btnGorevListesi.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem11.ImageOptions.Image")));
-            this.btnGorevListesi.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem11.ImageOptions.LargeImage")));
+            this.btnGorevListesi.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnGorevListesi.ImageOptions.Image")));
+            this.btnGorevListesi.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnGorevListesi.ImageOptions.LargeImage")));
             this.btnGorevListesi.Name = "btnGorevListesi";
             this.btnGorevListesi.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnGorevListesi_ItemClick);
             // 
-            // barButtonItem12
+            // btnGorevTanimla
             // 
-            this.barButtonItem12.Caption = "Görev Tanımla";
-            this.barButtonItem12.Id = 14;
-            this.barButtonItem12.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem12.ImageOptions.Image")));
-            this.barButtonItem12.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem12.ImageOptions.LargeImage")));
-            this.barButtonItem12.Name = "barButtonItem12";
+            this.btnGorevTanimla.Caption = "Görev Tanımla";
+            this.btnGorevTanimla.Id = 14;
+            this.btnGorevTanimla.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnGorevTanimla.ImageOptions.Image")));
+            this.btnGorevTanimla.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnGorevTanimla.ImageOptions.LargeImage")));
+            this.btnGorevTanimla.Name = "btnGorevTanimla";
+            this.btnGorevTanimla.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnGorevTanimla_ItemClick);
             // 
             // barButtonItem13
             // 
@@ -265,13 +267,14 @@
             this.barButtonItem15.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem15.ImageOptions.LargeImage")));
             this.barButtonItem15.Name = "barButtonItem15";
             // 
-            // barButtonItem16
+            // btnGorevDetay
             // 
-            this.barButtonItem16.Caption = "Görev Detayları";
-            this.barButtonItem16.Id = 18;
-            this.barButtonItem16.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem16.ImageOptions.Image")));
-            this.barButtonItem16.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem16.ImageOptions.LargeImage")));
-            this.barButtonItem16.Name = "barButtonItem16";
+            this.btnGorevDetay.Caption = "Görev Detayları";
+            this.btnGorevDetay.Id = 18;
+            this.btnGorevDetay.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnGorevDetay.ImageOptions.Image")));
+            this.btnGorevDetay.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnGorevDetay.ImageOptions.LargeImage")));
+            this.btnGorevDetay.Name = "btnGorevDetay";
+            this.btnGorevDetay.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnGorevDetay_ItemClick);
             // 
             // barButtonItem17
             // 
@@ -346,7 +349,7 @@
             // 
             // ribbonPageGroup1
             // 
-            this.ribbonPageGroup1.ItemLinks.Add(this.barButtonItem1);
+            this.ribbonPageGroup1.ItemLinks.Add(this.btnAnaSayfa);
             this.ribbonPageGroup1.Name = "ribbonPageGroup1";
             // 
             // ribbonPage2
@@ -419,7 +422,7 @@
             // ribbonPageGroup8
             // 
             this.ribbonPageGroup8.ItemLinks.Add(this.btnGorevListesi);
-            this.ribbonPageGroup8.ItemLinks.Add(this.barButtonItem12);
+            this.ribbonPageGroup8.ItemLinks.Add(this.btnGorevTanimla);
             this.ribbonPageGroup8.ItemLinks.Add(this.barButtonItem13);
             this.ribbonPageGroup8.ItemLinks.Add(this.barButtonItem14);
             this.ribbonPageGroup8.Name = "ribbonPageGroup8";
@@ -431,7 +434,7 @@
             // 
             // ribbonPageGroup10
             // 
-            this.ribbonPageGroup10.ItemLinks.Add(this.barButtonItem16);
+            this.ribbonPageGroup10.ItemLinks.Add(this.btnGorevDetay);
             this.ribbonPageGroup10.Name = "ribbonPageGroup10";
             // 
             // ribbonPage6
@@ -495,7 +498,7 @@
         private DevExpress.XtraBars.Ribbon.RibbonControl ribbonControl1;
         private DevExpress.XtraBars.Ribbon.RibbonPage ribbonPage1;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup1;
-        private DevExpress.XtraBars.BarButtonItem barButtonItem1;
+        private DevExpress.XtraBars.BarButtonItem btnAnaSayfa;
         private DevExpress.XtraBars.BarButtonItem btnDepartmanListesi;
         private DevExpress.XtraBars.BarButtonItem barButtonItem3;
         private DevExpress.XtraBars.BarButtonItem barButtonItem4;
@@ -516,11 +519,11 @@
         private DevExpress.XtraBars.BarCheckItem barCheckItem1;
         private DevExpress.XtraBars.BarButtonItem F;
         private DevExpress.XtraBars.BarButtonItem btnGorevListesi;
-        private DevExpress.XtraBars.BarButtonItem barButtonItem12;
+        private DevExpress.XtraBars.BarButtonItem btnGorevTanimla;
         private DevExpress.XtraBars.BarButtonItem barButtonItem13;
         private DevExpress.XtraBars.BarButtonItem barButtonItem14;
         private DevExpress.XtraBars.BarButtonItem barButtonItem15;
-        private DevExpress.XtraBars.BarButtonItem barButtonItem16;
+        private DevExpress.XtraBars.BarButtonItem btnGorevDetay;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup7;
         private DevExpress.XtraBars.Ribbon.RibbonPage ribbonPage5;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup8;

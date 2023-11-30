@@ -25,13 +25,17 @@ namespace İş_Takip_Projesi.Formlar
                 
                 x.Aciklama
             } ).ToList();
-            chartControl1.Series["Series 1"].Points.AddPoint("İnsan Kaynakları", 26);
-            chartControl1.Series["Series 1"].Points.AddPoint("Muhasebe", 55);
-            chartControl1.Series["Series 1"].Points.AddPoint("Temizlik", 12);
-            chartControl1.Series["Series 1"].Points.AddPoint("Danışma", 42);
-            chartControl1.Series["Series 1"].Points.AddPoint("Güvenlik", 22);
-            chartControl1.Series["Series 1"].Points.AddPoint("Ulaşım", 31);
-            chartControl1.Series["Series 1"].Points.AddPoint("Müdür", 85);
+
+            lblAktifGörev.Text=db.TblGorevler.Where(x => x.Durum==true).Count().ToString();
+            lblPasifGörev.Text=db.TblGorevler.Where(x => x.Durum==false).Count().ToString();
+            lblToplamDepartman.Text=db.TblDepartmanlar.Count().ToString();
+
+
+            chartControl1.Series["İstatistik"].Points.AddPoint("Aktif Görevler",int.Parse(lblAktifGörev.Text));
+            chartControl1.Series["İstatistik"].Points.AddPoint("Pasif Görevler",int.Parse(lblPasifGörev.Text));
+            chartControl1.Series["İstatistik"].Points.AddPoint("Departman Sayısı",int.Parse(lblToplamDepartman.Text));
+            
+            
             
             
         }
