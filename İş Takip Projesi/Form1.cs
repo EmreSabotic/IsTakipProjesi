@@ -33,7 +33,9 @@ namespace İş_Takip_Projesi
                 frm2= new Formlar.FrmPersoneller();
                 frm2.MdiParent = this;
                 frm2.Show();
+                
             }
+            
         }
         Formlar.FrmPersonelİstatistik frm3;
         private void btnPersonelİstatistik_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)

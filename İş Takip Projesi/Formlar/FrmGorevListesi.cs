@@ -34,10 +34,11 @@ namespace İş_Takip_Projesi.Formlar
             chartControl1.Series["İstatistik"].Points.AddPoint("Aktif Görevler",int.Parse(lblAktifGörev.Text));
             chartControl1.Series["İstatistik"].Points.AddPoint("Pasif Görevler",int.Parse(lblPasifGörev.Text));
             chartControl1.Series["İstatistik"].Points.AddPoint("Departman Sayısı",int.Parse(lblToplamDepartman.Text));
-            
-            
-            
-            
+
+            gridView1.OptionsView.ColumnAutoWidth = true;
+            gridView1.BestFitColumns();
+
+
         }
     }
 }

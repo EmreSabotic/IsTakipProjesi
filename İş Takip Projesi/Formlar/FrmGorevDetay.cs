@@ -23,6 +23,8 @@ namespace İş_Takip_Projesi.Formlar
         {
             db.TblGorevDetaylar.Load();
             bindingSource1.DataSource=db.TblGorevDetaylar.Local;
+            gridView1.OptionsView.ColumnAutoWidth = true;
+            gridView1.BestFitColumns();
         }
 
         private void gridControl1_Click(object sender, EventArgs e)

@@ -47,6 +47,10 @@ namespace İş_Takip_Projesi.Formlar
             lookUpEdit1.Properties.ValueMember = "ID";
             lookUpEdit1.Properties.DisplayMember = "Ad";
             lookUpEdit1.Properties.DataSource = departmanlar;
+            gridView1.Columns["Durum"].Visible = false;
+
+            gridView1.OptionsView.ColumnAutoWidth = true;
+            gridView1.BestFitColumns();
 
         }
 

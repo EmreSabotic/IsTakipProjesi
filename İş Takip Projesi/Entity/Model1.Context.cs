@@ -31,5 +31,6 @@ namespace İş_Takip_Projesi.Entity
         public virtual DbSet<TblGorevDetaylar> TblGorevDetaylar { get; set; }
         public virtual DbSet<TblGorevler> TblGorevler { get; set; }
         public virtual DbSet<TblPersonel> TblPersonel { get; set; }
+        public virtual DbSet<TblCagri> TblCagri { get; set; }
     }
 }
