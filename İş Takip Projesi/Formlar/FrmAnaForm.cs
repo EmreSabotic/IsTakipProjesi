@@ -60,6 +60,32 @@ namespace İş_Takip_Projesi.Formlar
             gridView3.OptionsView.ColumnAutoWidth = true;
             gridView3.BestFitColumns();
 
+
+            //fihrist komutları
+
+            gridControl4.DataSource=(from x in db.TblFirmalar 
+                                     
+                                     
+                                     select new
+                                     {
+                                         x.Ad,
+                                         x.Mail,
+                                         x.Telefon
+
+
+                                     }).ToList();
+            //Çağrı grafikleri
+
+            int aktif_cagrilar = db.TblCagri.Where(x => x.Durum == true).Count();
+            int pasif_cagrilar = db.TblCagri.Where(x => x.Durum == false).Count();
+
+
+            chartControl1.Series["Series 1"].Points.AddPoint("Aktif Çağrılar", aktif_cagrilar);
+            chartControl1.Series["Series 1"].Points.AddPoint("Pasif Çağrılar", pasif_cagrilar);
+            
+
+            gridView1.OptionsView.ColumnAutoWidth = true;
+            gridView1.BestFitColumns();
         }
     }
 }

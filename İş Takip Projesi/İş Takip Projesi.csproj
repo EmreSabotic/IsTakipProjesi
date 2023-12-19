@@ -127,6 +127,12 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formlar\AktifCagrilar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formlar\AktifCagrilar.Designer.cs">
+      <DependentUpon>AktifCagrilar.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formlar\FrmAnaForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -169,10 +175,19 @@
     <Compile Include="Formlar\FrmPersonelİstatistik.Designer.cs">
       <DependentUpon>FrmPersonelİstatistik.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formlar\PasifCagrilar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formlar\PasifCagrilar.Designer.cs">
+      <DependentUpon>PasifCagrilar.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formlar\AktifCagrilar.resx">
+      <DependentUpon>AktifCagrilar.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formlar\FrmAnaForm.resx">
       <DependentUpon>FrmAnaForm.cs</DependentUpon>
@@ -194,6 +209,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Formlar\FrmPersonelİstatistik.resx">
       <DependentUpon>FrmPersonelİstatistik.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formlar\PasifCagrilar.resx">
+      <DependentUpon>PasifCagrilar.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">

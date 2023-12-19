@@ -87,5 +87,29 @@ namespace İş_Takip_Projesi
                 frm7.Show();
             }
         }
+
+        Formlar.AktifCagrilar frm8;
+
+        private void btnAktifCagrilar_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+
+            if (frm8 == null || frm8.IsDisposed)
+            {
+                frm8 = new Formlar.AktifCagrilar();
+                frm8.MdiParent = this;
+                frm8.Show();
+            }
+        }
+        Formlar.PasifCagrilar frm9;
+        private void barButtonItem2_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            if (frm9==null || frm9.IsDisposed)
+            {
+                frm9 = new Formlar.PasifCagrilar();
+                frm9.MdiParent = this;
+                frm9.Show();
+
+            }
+        }
     }
 }
